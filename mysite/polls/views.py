@@ -15,8 +15,10 @@ def get_queryset(self):
 '''
 def detail(request, question_id):
     question = get_object_or_404(Question,pk=question_id)
-    return  Question.objects.filter(pub_date__lte=timezone.now())
-    #return render(request, 'polls/detail.html', {'question': question})
+    if question.pub_date >timezone.now():
+        raise Http404("Question not found")
+    #return  Question.objects.filter(pub_date__lte=timezone.now())
+    return render(request, 'polls/detail.html', {'question': question})
     #return HttpResponse("You're looking at question %s." % question_id)
 
 def results(request, question_id):
@@ -27,9 +29,9 @@ def results(request, question_id):
 #   return HttpResponse("You're voting on question %s." % question_id)
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5] 
+    latest_question_list = Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5] 
     context = {'latest_question_list': latest_question_list}
-    return Question.objects.filter(pub_date_lte=timezone.now()).order_by('-pub_date')[:5] #render(request, 'polls/index.html', context)
+    return render(request, 'polls/index.html', context)
 
 
 def vote(request, question_id):
