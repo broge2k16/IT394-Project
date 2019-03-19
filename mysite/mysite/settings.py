@@ -75,13 +75,18 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'defaultold': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
     'default':{
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'polls'
+        'NAME':'polls',
+		'USER':'polls',
+		'PASSWORD':'pollspass',
+		'HOST':'127.0.0.1',
+	}
+
 }
 
 
@@ -122,3 +127,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
