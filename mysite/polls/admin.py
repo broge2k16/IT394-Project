@@ -1,12 +1,18 @@
 from django.contrib import admin
 
-from .models import Question, Choice
+from .models import Game, Location, Sport, Player
 
 # Register your models here.
+
+admin.site.register(Game)
+admin.site.register(Location)
+admin.site.register(Sport)
+admin.site.register(Player)
+
+'''
 class ChoiceInline(admin.TabularInline): #or StackedInLine
     model = Choice
     extra = 3
-
 
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -19,3 +25,4 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 admin.site.register(Question,QuestionAdmin)
+'''
