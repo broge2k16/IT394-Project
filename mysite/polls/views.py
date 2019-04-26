@@ -5,14 +5,17 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
-from .models import Question, Choice
+from .models import Game, Location, Sport, Player
 
 # Create your views here.
+
+
+
 '''
 def get_queryset(self):
     """Return the last five published questions."""
     return Question.objects.filter(pub_date_lte=timezone.now()).order_by('-pub_date')[:5]
-'''
+
 def detail(request, question_id):
     question = get_object_or_404(Question,pk=question_id)
     if question.pub_date >timezone.now():
@@ -33,7 +36,6 @@ def index(request):
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
 
-
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     try:
@@ -51,3 +53,4 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+'''
