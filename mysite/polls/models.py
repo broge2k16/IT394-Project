@@ -19,7 +19,7 @@ class Location(models.Model):
     stadiumName = models.CharField(max_length=30)
 
 class Sport(models.Model):
-    genderCatergory = models.CharField(max_length=15)
+    genderCategory = models.CharField(max_length=15)
     sportName = models.CharField(max_length=15)
 
 class Player(models.Model):
