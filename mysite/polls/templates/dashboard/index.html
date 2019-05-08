@@ -1,0 +1,7 @@
+<title>Athletic Dashboard</title>
+  <h2> Dashboard </h2>
+  <ul>
+  {% for game in latest_games %}
+  <li> {{game.location}} {{game.sport.sportName }} </li>
+  {% endfor %}
+  </ul>

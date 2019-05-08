@@ -5,11 +5,12 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
-from .models import Game, Location, Sport, Player
+from .models import Game, Location, Sport
 
 # Create your views here.
 
-
+def index(request):
+    return render(request, 'dashboard/index.html', {'latest_games': Game.latest_games()})
 
 '''
 def get_queryset(self):

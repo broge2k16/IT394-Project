@@ -1,13 +1,12 @@
 from django.contrib import admin
 
-from .models import Game, Location, Sport, Player
+from .models import Game, Location, Sport
 
 # Register your models here.
 
 admin.site.register(Game)
 admin.site.register(Location)
 admin.site.register(Sport)
-admin.site.register(Player)
 
 '''
 class ChoiceInline(admin.TabularInline): #or StackedInLine
