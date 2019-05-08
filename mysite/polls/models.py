@@ -8,26 +8,28 @@ from django.utils import timezone
 class Game(models.Model):
     homeTeam = models.CharField(max_length=30)
     awayTeam = models.CharField(max_length=30)
-    gameDate = models.CharField(max_length=15)
-    gameTime = models.CharField(max_length=15)
-    gameScore = gameDate = models.CharField(max_length=15)
-    sportID = models.ForeignKey(Sport, on_delete=models.CASCADE)
-    locationID = models.ForeignKey(Location, on_delete=models.CASCADE)
+    #gameDate = models.CharField(max_length=15)
+    #gameTime = models.CharField(max_length=15)
+    gameTime = models.DateTimeField
+    #gameScore = gameDate = models.CharField(max_length=15)
+    sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
 class Location(models.Model):
     campusLocation = models.CharField(max_length=30)
-    stadiumName = models.CharField(max_length=30)
+    venue = models.CharField(max_length=30)
 
 class Sport(models.Model):
-    genderCategory = models.CharField(max_length=15)
-    sportName = models.CharField(max_length=15)
+    genderCategory = models.CharField(max_length=15) #make a choose 2
+    sportName = models.CharField(max_length=50)
 
-class Player(models.Model):
+'''
+    class Player(models.Model):
     lastName = models.CharField(max_length=15)
     firstName = models.CharField(max_length=15)
     playerPosition = models.CharField(max_length=15)
     sportID = models.ForeignKey(Sport, on_delete=models.CASCADE)
-
+'''
 '''
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
