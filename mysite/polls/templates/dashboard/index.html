@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <style>
 
 .dropbtn {
@@ -47,27 +48,48 @@
 h1 {
   position: relative;
   text-align: center;
-  top: 20px;
+  top: 42px;
+  background: black;
+  color: white;
+  padding: 5px;
+
+}
+
+h2 {
+  positoin: relative;
+  text-align: center;
+  padding-top: 70px;
+}
+
+ul {
+  list-style-type: none;
+  postion: relative;
+  text-align: center;
+  padding-top: 10px;
 }
 
 </style>
-
-<head>
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Sport Rosters</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-</div>
 </head>
-
-<body>
 
 <h1>West Point Athletic Hub</h1>
 
-<h2> Upcoming Events </h2>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Sport Rosters</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href=https://goarmywestpoint.com/roster.aspx?path=baseball>Baseball</a>
+    <a href=https://goarmywestpoint.com/roster.aspx?path=msoc>Soccer</a>
+    <a href=https://goarmywestpoint.com/roster.aspx?path=football>Football</a>
+    <a href=https://goarmywestpoint.com/roster.aspx?path=wrugby>Women's Rugby</a>
+    <a href=https://goarmywestpoint.com/roster.aspx?path=mrugby>Men's Rugby</a>
+    <a href=https://goarmywestpoint.com/roster.aspx?path=wlax>Women's Lacrosse</a>
+    <a href=https://goarmywestpoint.com/roster.aspx?path=mlax>Men's Lacrosse</a>
+  </div>
+</div>
+
+<body>
+
+
+<h2> Upcoming Games </h2>
 
 <ul>
 {% for game in latest_games %}
