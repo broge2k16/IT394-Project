@@ -96,7 +96,7 @@ ul {
 
 <ul>
 {% for game in latest_games %}
-<li> {{game.location}} {{game.sport.sportName }} </li>
+<li> {{game.sport.sportName }} {{game.location}} {{game.homeTeam}} {{game.awayTeam}} {{game.gameTime}} </li>
 {% endfor %}
 </ul>
 
